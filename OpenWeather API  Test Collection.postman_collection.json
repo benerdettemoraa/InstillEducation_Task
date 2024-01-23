@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "e2646ee3-8caa-4cb6-a508-afdfc87ba685",
+		"name": "OpenWeather Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12701436"
+	},
+	"item": [
+		{
+			"name": "Current Forecast",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "783dd9b86e3abda09ba7a98b663ea11d",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=783dd9b86e3abda09ba7a98b663ea11d",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"3.0",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33.44"
+						},
+						{
+							"key": "lon",
+							"value": "-94.04"
+						},
+						{
+							"key": "appid",
+							"value": "783dd9b86e3abda09ba7a98b663ea11d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
