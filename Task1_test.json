@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "e2646ee3-8caa-4cb6-a508-afdfc87ba685",
+		"name": "OpenWeather Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12701436"
+	},
+	"item": [
+		{
+			"name": "Current Forecast",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check if current the weather is sunny \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.current.weather[0].main).to.eql(\"Sunny\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "81a61dbec081e31c134fa246c28bb7ce",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "81a61dbec081e31c134fa246c28bb7ce",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openweathermap.org/data/3.0/onecall?lat=-1.25&lon=36.69&exclude=hourly,daily&appid=81a61dbec081e31c134fa246c28bb7ce",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"3.0",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-1.25"
+						},
+						{
+							"key": "lon",
+							"value": "36.69"
+						},
+						{
+							"key": "exclude",
+							"value": "hourly,daily"
+						},
+						{
+							"key": "appid",
+							"value": "81a61dbec081e31c134fa246c28bb7ce"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Current Forecast",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.openweathermap.org/data/3.0/onecall?lat=-1.25&lon=36.69&exclude=hourly,daily&appid=81a61dbec081e31c134fa246c28bb7ce",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"3.0",
+								"onecall"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "-1.25"
+								},
+								{
+									"key": "lon",
+									"value": "36.69"
+								},
+								{
+									"key": "exclude",
+									"value": "hourly,daily"
+								},
+								{
+									"key": "appid",
+									"value": "81a61dbec081e31c134fa246c28bb7ce"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "openresty"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Jan 2024 17:53:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "384"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Cache-Key",
+							"value": "/data/3.0/onecall?783dd9b86e3abda09ba7a98b663ea11d=783dd9b86e3abda09ba7a98b663ea11d&exclude=hourly,daily&lat=-1.25&lon=36.69"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"lat\": -1.25,\n    \"lon\": 36.69,\n    \"timezone\": \"Africa/Nairobi\",\n    \"timezone_offset\": 10800,\n    \"current\": {\n        \"dt\": 1705946014,\n        \"sunrise\": 1705894746,\n        \"sunset\": 1705938586,\n        \"temp\": 292.24,\n        \"feels_like\": 291.77,\n        \"pressure\": 1024,\n        \"humidity\": 60,\n        \"dew_point\": 284.3,\n        \"uvi\": 0,\n        \"clouds\": 40,\n        \"visibility\": 10000,\n        \"wind_speed\": 4.63,\n        \"wind_deg\": 70,\n        \"weather\": [\n            {\n                \"id\": 802,\n                \"main\": \"Clouds\",\n                \"description\": \"scattered clouds\",\n                \"icon\": \"03n\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
